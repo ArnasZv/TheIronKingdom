@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* imports an specific font onto the page*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* in case the browser doesnt accept the imported font to use these ones then*/
+html{
+    font-family:Poppins, sans-serif;
+    font-size: 12pt;
+    color: black;
+    text-align: center;
+}
+body{
+    min-height: 100vh;
+    background-image: url(https://static.wixstatic.com/media/57961f_880d0d4b21314d7bac23a129611b68b1~mv2.jpg);
+    background-size:cover;
+    background-position: right;
+    overflow: hidden;
+}
+/* the grey box on the left and its customizations*/
+.wrapper{
+    box-sizing: border-box;
+    background-color: rgba(122, 120, 120, 0.767);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0px 20px 20px 0px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+    
+}
+/* specifies to an (a) */
+.wrapper > a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    
+}
+/* home button customs*/
+.home-button{
+    display: flex;
+    position:relative;
+    font-weight: bolder;
+    margin: 2px 0px 0px 15px ;
+
+
+
+
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+body > a {
+    text-decoration:none;
+    color:white;
+    display: flex;
+    position: absolute;
+    margin-left: 20px;
+    font-weight: 800;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* everything to do with a form */
+label{
+    background-color: purple;
+    align-content: center;
+    align-self: center;
+}
+
+form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+div:has(input:focus) > label{
+background-color: orange;
+}
+
+form input::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+
+
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    fill: white;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    transition: 120ms ease;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    border: 3px solid rgba(255, 255, 255, 0.767);
+    background-color: rgba(255, 255, 255, 0.767);
+}
+form input:hover{
+    border-color: orange;
+}
+
+form > button{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: 900;
+    background-color: none;
+    padding: 5px;
+    border: none;
+    border-radius: 500px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+
+}
+
+form input:focus{
+    outline:none ;
+    border-color: orange;
+}
+
+/*responsivnes*/
+@media(max-width:768px){
+    .wrapper{
+        width: min(768px, 100%);
+        border-radius: 0px;
+    }
+}
+/* error colors*/
+form div.incorrect label{
+    background-color: rgb(141, 51, 51);
+}
+
+form div.incorrect input{
+    border-color: rgb(141, 51, 51);
+}
+
+#error-message{
+    color: rgb(141, 51, 51);
+}
+
+.flash{
+    color: rgb(141, 51, 51);
+}

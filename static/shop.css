@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12pt;
+    color: white;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    background-size: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+}
+.background-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    image-rendering: auto;
+
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background-color: rgba(255, 255, 255, 0.500);
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 10px 20px;
+}
+
+.user-info{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 6px;
+    
+ 
+}
+
+.user-info a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: black;
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+
+}
+
+
+
+
+
+.main-nav{
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    background-image: url(/static/images/57961f_28b99b2b791d4336b872e71880196237~mv2.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid white;
+
+    
+   
+    
+}
+
+
+
+
+
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.705);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: black;
+    border-radius: 10px;
+    border:solid 2px black
+}
+
+.main-nav a:hover {
+    color: #000000;
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color:rgba(255, 255, 255, 0.2) ;
+    border-radius: 5px;
+}
+.main-nav > h1{
+    font-size: 6em;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+/*Start of the shop css*/
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.568);
+}
+/* makes title have a undeline*/
+.shop-container > h1 {
+    text-decoration: underline;
+}
+/* product flexbox and its adjustments*/
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background: rgba(122, 120, 120, 0.842);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    text-align: center;
+    box-shadow: #000000 5px 5px 10px;
+    border: white 2px solid;
+    text-shadow: #000000 2px 2px 5px;
+
+  
+}
+
+.product img {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: #000000 2px 2px 5px;
+}
+
+.product, .add-to-cart {
+    box-shadow: #000000 2px 2px 5px;
+
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* has a dynamic button color change*/
+button:hover {
+    background: rgb(182, 181, 181);
+    transition: 0.3s ease;
+}
+/* cart options */
+.cart {
+    margin-top: 40px;
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%;
+    max-width: 100%;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+/* options for the items in your order list */
+#cart-items li {
+margin: 10px 0;
+display: flex;
+justify-content: space-between;
+}
+
+.checkout > a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    transition: 0.3s ease;
+}
+/* footer options */
+.footer-nav{
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    bottom: 0;
+    padding-top: 100px;
+
+}
+
+.footer-nav ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-nav a:hover{
+    color: red;
+    transform: scale(1.1);
+}
+
+/* Screen Respon setting */
+
+@media (max-width:1280px){
+
+}
+
+@media (max-width:1024px){
+
+}
+
+@media (max-width:910px) {
+    .main-nav > h1{
+        font-size:4em;
+    } 
+}
+
+@media (max-width:830px){
+
+}
+
+@media (max-width:768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #navbar.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap:10px
+    }
+
+    #navbar.active {
+        display: block;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        gap:15px
+    }
+
+    .main-nav > h1{
+    font-size: 1.6em;
+    margin-bottom: 10px;
+   }
+  
+}
+
+@media (max-width:480px) {
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .logo img {
+        width: 100px;
+    }
+
+    html{
+        font-size: 10pt;
+    }
+}
+
+/*Phone style*/
+
+@media (max-width:380px){
+}

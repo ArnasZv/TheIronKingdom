@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='aboutus.css')}}">
+    <script src="{{url_for('static', filename='MobileNav.js')}}" defer></script>
+    <script src="{{url_for('static', filename='aboutus.js')}}" defer></script>
+
+    <script src="{{url_for('static', filename='aboutus.js')}}" defer></script>
+    <title>About Us - The Iron Kingdom Gym</title>
+ <!-- For google maps (this was a nighmare to set up I tried my best to set this up in the JavaScript file but quite often it would drop an error and the map wouldnt load because the API loaded first and couldnt 
+     find the function initMap, so in order to make it global and for the API to access it instantly i had to put it into the html file (if there is a better way to do this please let me know)-->
+     <script>
+        function initMap() {
+    const gymLocation = { lat: 53.71555010488027, lng:-7.813699619576325 };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: gymLocation,
+        styles: [
+            {
+                elementType: 'geometry', 
+            }
+        ]
+});
+new google.maps.Marker({
+    position: gymLocation,
+    map: map,
+    title: "The Iron Kingdom"
+});
+
+}
+
+
+window.initMap = initMap;
+
+     </script>
+     <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHon2dj_sJ7QnaewczOW4vpfUF9XPoFLg&callback=initMap"></script>
+
+
+
+   
+</head>
+<body>
+    <div class="container">
+
+        <div class="background-image"></div>
+
+<div class="main-nav">
+            <h1>The Iron Kingdom</h1>
+        
+            <button class="menu-toggle" id="menuToggle">&#9776;</button><!--Hamburger menu for phone screens-->
+            <nav id="navbar">
+                <ul>
+                    <li><a class="button" a href="{{url_for('home')}}">Home</a></li> 
+                    <li><a class="signup-button" a href="{{url_for('shop')}}">Shop</a></li> 
+                    <li><a class="login-button" a href="{{url_for('login')}}">Login</a></li> 
+                    <li><a class="signup-button" a href="{{url_for('signup')}}">Sign Up</a></li>
+                    <li><a class="about-us" a href="{{url_for('about_us')}}">About Us</a></li>
+                    <li><a class="contact-us" a href="{{url_for('contact_us')}}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+         {% if logged_in_user %}
+                    <div class="user-info">Welcome, {{ logged_in_user }} | <a href="{{ url_for('logout')}}">Logout</a></div>
+                {% endif%}
+
+<div class="background">
+
+    <div class="Join-us-panel">
+        <h1>About The Iron Kingdom</h1>
+        <p class="intro"
+            >Welcome to The Iron Kingdom Gym, your ultimate destination for fitness and community in Longford Town. 
+            We are dedicated to helping you achieve your fitness goals with state-of-the-art equipment, expert trainers, and a supportive environment. 
+            Whether you're a beginner or a seasoned athlete, we have everything you need to succeed on your fitness journey.
+        </p>
+        <div class="opening-hours">
+        <h2>Opening Hours</h2>
+        <ul style="list-style:none; padding-left: 0;">
+            <li>Mon - Fri: 6:00 AM - 10:00 PM</li>
+            <li>Saturday: 9:00 AM - 7:00  PM </li>
+            <li>Sunday: 10:00 AM - 6:00 PM</li>
+        </ul>
+    </div>
+
+        <h2 style="color:white; margin-top:30px;">Meet Our Team</h2>
+
+        <div class="staff-grid">
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_d199ead20fd24ac29137e5c8fe41ec44~mv2.jpg">
+                <h3>Josh Neary</h3>
+                <p>Energetic and enthusiastic, Josh is on a mission to transform lives through fitness. Fully qualified at Level 5, he's ready to empower you to reach your ultimate potential.</p>
+            </div>
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_f0cc472aedda41a984830a31ab8f3bee~mv2.jpg">
+                <h3>Ivana Kocurova</h3>
+                <p>Driven and passionate, Ivana brings energy, expertise, and real-world experience to every session. As a fully qualified Level 5 trainer and active bikini competitor, she’s here to help you transform your body and confidence—one workout at a time.</p>
+            </div>
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_137e3459fb19468b99f3216b64d2af6b~mv2.jpg">
+                <h3>Sinead Fleming</h3>
+                <p>Sinead is a highly qualified Level 5 personal trainer and bikini competitor who’s always on the move—helping clients smash their goals every day. With a packed schedule and proven results, she’s living proof that passion, discipline, and dedication get real results.</p>
+            </div>
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_1f48dd99c0b2404bb9d604a8fbd5f871~mv2.jpg">
+                <h3>Danny Monks</h3>
+                <p>Danny is a fully qualified Level 5 personal trainer with a passion for changing lives. He’s hands-on, energetic, and always busy—whether he's pushing clients in the gym or coaching athletes at a local football club. Focused, dedicated, and driven by results, he's ready to help you reach your full potential.</p>
+            </div>
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_1f48dd99c0b2404bb9d604a8fbd5f871~mv2.jpg">
+                <h3>Michal Mai Xuan</h3>
+                <p>Coming Soon</p>
+            </div>
+            <div class="staff-card">
+                <img src="https://static.wixstatic.com/media/57961f_1f48dd99c0b2404bb9d604a8fbd5f871~mv2.jpg">
+                <h3>Paulius Markelis</h3>
+                <p>Coming Soon</p>
+            </div>
+        </div>
+
+    
+ 
+        <h2 style="color: white; margin-top: 30px;">Our Location</h2>
+           
+        <div id="map"></div>
+    
+        
+
+    
+    
+
+
+    </div>
+</div>
+ <div class="footer-nav">
+            <nav>
+                <ol>
+                <a href="index.html">Home</a> | 
+                <a href="merch.html">Merch</a> | 
+                <a href="login.html">Login</a> | 
+                <a href="signup.html">Sign Up</a>
+                </ol>
+                <p>&copy; 2025 THE IRON KINGDOM. All rights reserved</p>
+            </nav>
+        </div>
+
+</body>
+</html>
