@@ -108,7 +108,7 @@ def inject_user():
     return dict(logged_in_user=session.get('user'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 
 
